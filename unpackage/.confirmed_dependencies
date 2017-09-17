@@ -1,0 +1,23 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf",
+			"image/x.jpg",
+			"image/c.jpg",
+			"image/z.jpg",
+			"manifest.json"
+		],
+		"refer": [
+			"sub.html"
+		]
+	},
+	"sub.html": {
+		"resources": [
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	}
+}

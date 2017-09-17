@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+        mui.init();
+    </script>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-icon mui-icon-left-nav mui-pull-left mui-backdrop-action" href=""></a>
+    <h1 class="mui-title">test</h1>
+</header>
+<div class="mui-content">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">折叠面板</a>
+            <div class="mui-collapse-content">
+                <p>mianbanneiorng 1111</p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse mui-active">
+            <a class="mui-navigate-right" href="#">默认展开面板</a>
+            <div class="mui-collapse-content">
+                <p>mianbanneiorng 222222</p>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse ">
+            <a class="mui-navigate-right" href="#">按钮</a>
+            <div class="mui-collapse-content">
+                <!--<button type="button" class="mui-btn">默认</button>-->
+                <button type="button" class="mui-btn mui-btn-primary">蓝色</button>
+                <button type="button" class="mui-btn mui-btn-success">绿色</button>
+                <button type="button" class="mui-btn mui-btn-warning">黄色</button>
+                <button type="button" class="mui-btn mui-btn-danger">红色</button>
+                <button type="button" class="mui-btn mui-btn-royal">紫色</button>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">操作表</a>
+            <div class="mui-collapse-content">
+                <button onclick="showMenu()" type="button" class="mui-btn mui-btn-primary mui-btn-negative">点击这里
+                </button>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">数字角标badge</a>
+            <div class="mui-collapse-content">
+                <span class="mui-badge">1</span>
+                <span class="mui-badge mui-badge-primary">12</span>
+                <span class="mui-badge mui-badge-success">123</span>
+                <span class="mui-badge mui-badge-warning">3</span>
+                <span class="mui-badge mui-badge-danger">45</span>
+                <span class="mui-badge mui-badge-purple">456</span>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">复选框</a>
+            <div class="mui-collapse-content">
+                <div class="mui-input-row mui-radio mui-left">
+                    <label>看书23</label>
+                    <input name="checkbox1" value="看书23" type="radio" cclass="rds">
+                </div>
+                <div class="mui-input-row mui-radio mui-left">
+                    <label>看书</label>
+                    <input name="checkbox1" value="看书" type="radio" class="rds">
+                </div>
+                <button type="button" class="mui-btn mui-btn-royal" onclick="getVal()">获取复选值</button>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">时间选择器</a>
+            <div class="mui-collapse-content">
+                <button type="button" class="mui-btn" onclick="showDate()">日期选择起</button>
+                <button type="button" class="mui-btn" onclick="showNow()">时间选择器</button>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">dialog对话框</a>
+            <div class="mui-collapse-content">
+                <button type="button" onclick="showTest();">点击测试</button>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">表单元素</a>
+            <div class="mui-collapse-content">
+                <form class="mui-input-group">
+                    <div class="mui-input-row">
+                        <label>用户名</label>
+                        <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+                    </div>
+                    <div class="mui-input-row">
+                        <label>密码</label>
+                        <input type="password" class="mui-input-password" placeholder="请输入密码">
+                    </div>
+                    <div class="mui-button-row">
+                        <button type="button" class="mui-btn mui-btn-primary">确认</button>
+                        <button type="button" class="mui-btn mui-btn-danger">取消</button>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <a class="mui-navigate-right" href="#">轮播组件</a>
+            <div class="mui-collapse-content">
+                <div class="mui-slider">
+                    <div class="mui-slider-group mui-slider-loop">
+                        <!--要加头尾切换-->
+                        <div class="mui-slider-item"><img src="image/z.jpg"/></div>
+                        <div class="mui-slider-item"><img src="image/c.jpg"/></div>
+                        <div class="mui-slider-item"><img src="image/x.jpg"/></div>
+                        <div class="mui-slider-item"><img src="image/z.jpg"/></div>
+                        <div class="mui-slider-item"><img src="image/c.jpg"/></div>
+                    </div>
+                    <div class="mui-slider-indicator">
+                        <div class="mui-indicator mui-active"></div>
+                        <div class="mui-indicator mui-active"></div>
+                        <div class="mui-indicator mui-active"></div>
+                    </div>
+                </div>
+                <button onclick="changeTo(0);" type="button" class="mui-btn mui-btn-warning">到第1张图</button>
+                <button onclick="changeTo(1);" type="button" class="mui-btn mui-btn-warning">到第2张图</button>
+                <!--TODO:这里有bug-->
+                <button onclick="changeTo(3);" type="button" class="mui-btn mui-btn-warning">到第3张图</button>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse ">
+            <a class="mui-navigate-right" href="#">list组件</a>
+            <div class="mui-collapse-content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell"><a class="mui-navigate-right" href="">项目1 <span
+                            class="mui-badge mui-badge-primary">12</span></a></li>
+                    <li class="mui-table-view-cell"><a class="mui-navigate-right" href="">项目1 <span
+                            class="mui-badge mui-badge-primary">12</span></a></li>
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;">
+                            <img class="mui-media-object mui-pull-left" src="image/c.jpg" height="400" width="500"/>
+                            <div class="mui-media-body">
+                                图本列表1
+                                <p class="mui-ellipsis">
+                                    设计模式JSON类型对象，格式如{top:10;left:10;width:200;height:200;}，所有值为像素值，其值相对于容器webview的位置。
+                                    如未设置此值，默认在屏幕居中显示。仅在iPad上有效，其它设备忽略此值。</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell mui-media">
+                        <a href="javascript:;">
+                            <img class="mui-media-object mui-pull-left" src="image/c.jpg" height="400" width="500"/>
+                            <div class="mui-media-body">
+                                图本列表2
+                                <p class="mui-ellipsis">
+                                    设计模式JSON类型对象，格式如{top:10;left:10;width:200;height:200;}，所有值为像素值，其值相对于容器webview的位置。
+                                    如未设置此值，默认在屏幕居中显示。仅在iPad上有效，其它设备忽略此值。</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell"><a class="mui-navigate-right" href="">项目1</a></li>
+                    <li class="mui-table-view-cell"><a class="mui-navigate-right" href="">项目1</a></li>
+                    <li class="mui-table-view-cell">项目1 <span class="mui-badge mui-badge-primary">12</span></li>
+                    <li class="mui-table-view-cell">项目1</li>
+                </ul>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse ">
+            <a class="mui-navigate-right" href="#">进度条</a>
+            <div class="mui-collapse-content">
+                <div class="mui-progressbar">
+                    <span></span>
+                </div>
+                <button type="button" class="mui-btn mui-btn-royal" onclick="setProgressbar()">浏览</button>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse ">
+            <a class="mui-navigate-right" href="#">滑块</a>
+            <div class="mui-collapse-content" style="padding-top: 70px;">
+                <div class="mui-input-row mui-input-range">
+                    <label>range</label>
+                    <input type="range" min="1" max="100" id="arange">
+                </div>
+                <button type="button" class="mui-btn " onclick="setTangeVal()">获取滑块值</button>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse ">
+            <a class="mui-navigate-right" href="#">switch 开关</a>
+            <div class="mui-collapse-content">
+                <div class="mui-switch" id="iSwitch">
+                    <div class="mui-switch-handle"></div>
+                </div>
+                <div class="mui-switch mui-switch-mini" id="iSwitchTwo">
+                    <div class=" mui-switch-handle "></div>
+                </div>
+                <div class="mui-switch mui-switch-mini mui-switch-blue">
+                    <div class=" mui-switch-handle "></div>
+                </div>
+                <div class="mui-switch mui-switch-blue">
+                    <div class=" mui-switch-handle "></div>
+                </div>
+                <div>
+                    <button type="button" class="mui-btn mui-pull-right" onclick="setSwitchVal()">获取滑块值</button>
+                </div>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse ">
+            <a class="mui-navigate-right" href="#">卡片试图</a>
+            <div class="mui-collapse-content">
+                <div class="mui-card">
+                    <div class="mui-card-header">页头</div>
+                    <!--TODO:line-height=0px 可以去除图片白边-->
+                    <div class="mui-card-content" style="line-height: 0px">
+                        <img src="image/c.jpg" style="width: 100%"/>
+                    </div>
+                    <div class="mui-card-footer">
+
+                        <div class="mui-media-body">
+                            图本列表1
+                            <p class="mui-ellipsis">
+                                设计模式JSON类型对象，格式如{top:10;left:10;width:200;height:200;}，所有值为像素值，其值相对于容器webview的位置。
+                                如未设置此值，默认在屏幕居中显示。仅在iPad上有效，其它设备忽略此值。</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!--<button type="button" class="mui-btn mui-btn-royal">紫色</button>-->
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse ">
+            <a class="mui-navigate-right" href="#">遮罩蒙版</a>
+            <div class="mui-collapse-content">
+                <button onclick="showMask()" type="button" class="mui-btn mui-btn-royal">展示效果</button>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse ">
+            <a class="mui-navigate-right" href="#">事件管理</a>
+            <div class="mui-collapse-content">
+                <ul class="mui-table-view" id="eventList">
+                    <li class="mui-table-view-cell">xiaohong</li>
+                    <li class="mui-table-view-cell">xiaoming</li>
+                    <li class="mui-table-view-cell">meinv</li>
+                    <li class="mui-table-view-cell">dapigu</li>
+                </ul>
+                <div>
+                    <button type="button" class="mui-btn mui-btn-royal" id="event">测试</button>
+                </div>
+            </div>
+        </li>
+        <li class="mui-table-view-cell mui-collapse ">
+            <a class="mui-navigate-right" href="#">ajax</a>
+            <div class="mui-collapse-content">
+                <button type="button" class="mui-btn mui-btn-warning" id="btnAjax">获取服务器数据</button>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+    mui.plusReady(function () {
+        document.getElementById('btnAjax').addEventListener('tap', function () {
+            mui.ajax({
+                type:'get',
+                url:'manifest.json',
+                success:function (msg) {
+                    mui.toast(msg)
+                },
+                error:function (x,t,e) {
+                    mui.toast(t)
+                }
+            })
+        })
+    })
+
+    mui.plusReady(function () {
+//        页面预加载
+        var detailPage = mui.preload({
+            url: 'sub.html',
+            id: 'sub.html'
+        })
+        mui("#eventList").on('tap', 'li', function () {
+            /**
+             * 首先要做一个预加载的页面
+             *  mui.fire(a,b,c)
+             *   参数a:页面预加载页面对象,
+             *   参数b:要传的自定义事件  用于子页面的监听
+             *   参数c:就是自定义参数b值   后期的ajax值可以传入
+             *   然后在使用openWindow函数打开对应的页面
+             */
+            mui.fire(detailPage, 'newId', {'title': this.innerHTML});
+            mui.openWindow({id: 'sub.html'});//写了预加载之后就不用在url参数了
+
+            mui.toast("打开子页面" + this.innerHTML)
+        })
+
+//        mui("#eventList").off('tap','li')   取消事件
+        document.getElementById('event').addEventListener('tap', function () {
+            mui.toast('ok')
+        })
+        //自动触发事件
+        mui.trigger(document.getElementById('event'), 'tap');
+    })
+
+    //遮罩蒙版
+    function showMask() {
+        mui.createMask(callback).show();
+        //close() 关闭;
+    }
+    function callback() {
+        mui.toast("你取消了操作")
+    }
+
+    mui.plusReady(function () {
+        document.getElementById("iSwitchTwo").addEventListener('toggle', function (e) {
+            if (e.detail.isActive) {//事件选中的样式
+                mui.toast("ON")
+            } else {
+                mui.toast("FFO")
+            }
+        })
+    })
+
+    function setSwitchVal() {
+        var iSwitch = document.getElementById("iSwitch").classList.contains('mui-active');//就是查看摸一个类是不是有这个样式 返回值是true false
+        if (iSwitch) {
+            mui.toast('on')
+        } else {
+            mui.toast('off')
+        }
+    }
+
+    function setTangeVal() {
+        var a = mui('#arange');
+        mui.toast(a[0].value);
+    }
+
+    function setProgressbar() {
+        //进度条的开是 show(); 关是hide();
+        var bl = 0;
+        setInterval(function () {
+            mui('.mui-progressbar').progressbar({progress: bl}).show();
+            bl += 5
+        }, 500)
+
+    }
+    // mui.plusReady()  这个相当与jq的$().ready()//这函数只在真机下运行
+    mui.plusReady(function () {
+        //轮播图的话这段函数是一定要有的, 因为后期图片事件是动态加载的. 这段函数还可以初始化slider组件
+//        var slider = mui('.mui-slider')
+//        slider.slider({interval: 0})
+        //slide  滑动事件
+        document.querySelector('.mui-slider').addEventListener('slide', function (e) {
+            mui.toast('第' + e.detail.slideNumber + '张')
+        })
+    });
+    function changeTo(index) {
+        var slider = mui('.mui-slider')
+        //轮播跳转 第index张图    index从0开始的
+        slider.slider().gotoItem(index)
+    }
+
+    mui('.mui-input-row input').input();//如果动态加载的表单,那么就要 初始化
+
+    function showTest() {
+        mui.prompt('请输入您的姓名', '张山', 'hi ', new Array('取消', '确认'), function (e) {
+            if (e.index == 1) {
+                mui.toast(e.value)
+            } else {
+                mui.toast('取消输入');
+            }
+        })
+    }
+
+    function showNow() {
+        var dTime = new Date()
+        plus.nativeUI.pickTime(function (e) {
+            var d = e.date;
+            mui.toast("选择时间:" + d.getHours() + d.getMinutes())
+        }, function (e) {
+            mui.toast("未选择时间" + e.message)
+        }, {
+            title: '选择时间',
+            is24Hour: true,
+            time: dTime
+        })
+    }
+
+    function showDate() {
+        var dData = new Date();
+        dData.setFullYear(2020, 1, 1);
+        var minData = new Date();
+        minData.setFullYear(2010, 1, 1);
+        var maxData = new Date();
+        maxData.setFullYear(2030, 1, 1);
+        /**
+         * plus.nativeUI.pickDate 参数(fn1,fn2,option)
+         * fn1必选 日期选择操作成功的回调函数
+         * fn2可选 日期选择操作取消或失败的回调函数
+         * option可选 日期选择操作的参数
+         */
+        plus.nativeUI.pickDate(function (e) {
+            var d = e.date;
+            mui.toast('你选择的日期是' + d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())
+        }, function (e) {
+            mui.toast("你没有选择日期")
+        }, {
+            title: '请选择日期',
+            data: dData,
+            minData: minData,
+            maxData: maxData
+        })
+    }
+
+    function getRadio(className) {
+        var r = document.getElementsByClassName(className)
+        var c = '请选择';
+        for (var i = 0; i < r.length; i++) {
+            if (r[i].checked) {
+                c = r[i].value;
+            }
+        }
+
+        return c;
+    }
+
+    function getVal() {
+        mui.toast(getRadio("rds"))
+    }
+
+    function showMenu() {
+        mui('#sheet1').popover('toggle');
+    }
+</script>
+<!--模态 操纵表-->
+<div id="sheet1" class="mui-popover mui-popover-bottom mui-popover-action ">
+    <!-- 可选择菜单 -->
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a href="#">菜单1</a>
+        </li>
+        <li class="mui-table-view-cell">
+            <a href="#">菜单2</a>
+        </li>
+    </ul>
+    <!-- 取消菜单 -->
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell">
+            <a href="#sheet1"><b>取消</b></a>
+        </li>
+    </ul>
+</div>
+
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item mui-active">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" id="tab2">
+				<span class="mui-icon mui-icon-phone"></span>
+				<span class="mui-tab-label">电话</span>
+			</a>
+			<a class="mui-tab-item">
+				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-tab-label">邮件</span>
+			</a>
+			<a class="mui-tab-item">
+				<span class="mui-icon mui-icon-gear"></span>
+				<span class="mui-tab-label">设置</span>
+			</a>
+		</nav>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			//插件初始化
+			mui.init({
+				//页面预加载,preloadPages这里是数组可以设置多个页面  [{},{},....]
+				preloadPages: [{
+					url: 'tel.html',
+					id: 'tel.html',
+					extras: {
+						name: 'xiaoMing',
+						age: '18'
+					}
+				}]
+			});
+			/**
+			 * 创建子页面  是预防局部滚动不流畅问题
+			 */
+			//h5+ 初始化
+			/**
+			 * 这里要是使用mui自定义的mui-bar就要用document.getElementById
+			 */
+			mui.plusReady(function() {
+				document.getElementById('tab2').addEventListener('tap', function() {
+					mui.openWindow({
+						url: 'tel.html',
+						id: 'tel.html',
+						extras: {
+							name: 'xiaoMing',
+							age: '18'
+						}
+					})
+				})
+			});
+			/**
+			 * 如果是自定义的新页面打卡
+			 * 用的是 mui.openwindow
+			 */
+		</script>
+	</body>
+
+</html>
